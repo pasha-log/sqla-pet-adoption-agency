@@ -1,0 +1,29 @@
+{% extends "base.html" %} 
+
+{% block title %}<h1 id="title" class="display-1 text-center">Add a Pet</h1>{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                {% for field in form if field.widget.input_type != 'hidden' %}
+                    <br>
+                    <div class="form-group">
+                        {{ field.label }}
+                        {{ field }}
+                        {% for err in field.errors %}
+                            <small class="form-text text-danger">
+                                {{err}}
+                            </small>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+                <div class="buttons">
+                    <button class="btn btn-success btn-lg">Add Pet</button>
+                    <a href="/" class="btn btn-danger btn-lg">Go Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

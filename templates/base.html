@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Animals</title>
+</head>
+
+{% block title %}
+    <div class="top">
+        <h1 id="title" class="display-1 text-center">Pasha's Pet Shop</h1>
+        <br>
+        <a href="/add" class="p-3 mb-2 bg-success text-white" id="new">Add New Pet</a>
+    </div>
+{% endblock %}
+
+<body>
+    {% block content %}
+        <div class="wrapper">
+            {% for pet in pets %}
+                    <div id="pet" class="container">
+                        <img class="img" src="{{ pet.photo_url }}" width="100px" height="100px">
+                        <a href="/{{ pet.id }}">{{ pet.name }}</a>
+                        <p>Availability: <b>{{ pet.available }}</b></p>
+                    </div>
+            {% endfor %}
+        </div>
+    {% endblock %}
+</body>
+</html>
