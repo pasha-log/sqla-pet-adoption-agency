@@ -1,6 +1,6 @@
 # Pasha's Pet Adoption Agency!
 
-<img src='screenshot-pet-shop.png' alt='' height='350' width='500'>
+<img src='screenshot-pet-shop.png' alt='' height='350' width='520'>
 
 ## Description: 
 
